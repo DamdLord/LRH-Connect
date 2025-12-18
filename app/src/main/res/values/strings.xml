@@ -1,0 +1,43 @@
+<resources>
+    <string name="app_name">LRH</string> <string name="loyarahi">LOYARAHI</string>
+    <string name="welcome">Welcome to</string>
+    <string name="under_welcome">The Coolest Way To Get Subscribed, Effortlessly. We offer instant recharge of Airtime, Databundle, CableTv(DStv, GOtv &amp; Startimes), Electricity Bill Payment and Airtime to Cash.</string>
+    <string name="register">Register</string>
+    <string name="login">Login</string>
+    <string name="our_services">OUR SERVICES</string>
+    <string name="under_bar">Electronic vending of airtime, data, bill payment and cable subscription.</string>
+    <string name="buy_data_bundle">Buy Data Bundle</string>
+    <string name="buy_data_bundle_text">Start enjoying this very low rates for your internet browsing databundle.</string>
+    <string name="buy_airtime">Buy Airtime</string>
+    <string name="buy_airtime_text">Buying airtime online has never been as easy and safe on LOYARAHI.</string>
+    <string name="cableTV">Cable Tv Subscription</string>
+    <string name="cableTv_text">Instantly Active Cable subscription with favourable service charge and cool profit.</string>
+    <string name="pay_electricity_bill">Pay Electricity Bill</string>
+    <string name="elctricity_text">Buying electricity token online has never been easier and safer as on LOYARAHI. </string>
+    <string name="why_choose_us">WHY CHOOSE US</string>
+    <string name="we_are_fast">We\'re Fast</string>
+    <string name="we_are_fast_text">Our Data Delivery and wallet funding is automated, Airtime top up and data purchase are automated and get delivered to you almost instantly...</string>
+    <string name="you_are_safe_text">You Wallet is the safest means of transacting with yur mobile airtimr. Your funding in your wallet can be kept as long as you want and is secured.</string>
+    <string name="you_are_safe">You\'re Safe</string>
+    <string name="we_are_reliable">We\'re Reliable</string>
+    <string name="we_are_reliable_text">With our several years of experience and engineers, we have learnt in the past years to be able to fully optimize our platform for reliability abd dependability.</string>
+    <string name="our_exclusive_data_plan">OUR EXCLUSIVE DATA PLAN</string>
+    <string name="become_a_reseller">Become a reseller today and enjoy unbeatable price discounts</string>
+    <string name="get_started">Get Started</string>
+    <string name="about_us">About Us</string>
+    <string name="contact_us">Contact Us</string>
+    <string name="our_vtu">Our VTU website is one of the best websites for purchasing your subscription at affordable rates. We are available 24/7</string>
+    <string name="phone">Phone: +2347061747689</string>
+    <string name="email">Email: loyarahi100@mail.com</string>
+    <string name="address">Address: Osun state</string>
+    <string name="open_hours">6am - 10pm</string>
+    <string name="copyright">Copyright @2026 All rights reserved</string>
+    <string name="forgotten_password">Forgotten Password?</string>
+    <string name="retrieve_account">Retrieve Account</string>
+    <string name="new_user">New User?</string>
+    <string name="verify">Verify</string>
+    <string name="password_match_error">Password does\'nt match </string>
+    <string name="already_have_an_account">Already have an account?</string>
+    <string name="welcome_text">Welcome to Loyarahi.com your trusted digital platform.
+We are committed to delivering reliable services, smooth transactions, and excellent user experience. Thank you for joining us. YOU DON'T NEED TO VERIFY YOUR ACCOUNT BEFORE FUNDING YOUR WALLET.</string>
+</resources>
