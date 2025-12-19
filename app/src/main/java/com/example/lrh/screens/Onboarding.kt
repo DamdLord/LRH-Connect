@@ -68,7 +68,8 @@ fun Onboarding(
 ) {
     Column(
         modifier = modifier
-            .fillMaxWidth() // FIX: no fillMaxSize on scroll root
+            .fillMaxWidth()
+            .padding(5.dp)
             .verticalScroll(rememberScrollState())
     ) {
 

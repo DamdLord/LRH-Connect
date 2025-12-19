@@ -12,7 +12,6 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import com.example.lrh.screens.Onboarding
 import com.example.lrh.ui.theme.LRHTheme
 
 class MainActivity : ComponentActivity() {
@@ -38,10 +37,7 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
             text = "Hello $name!",
             modifier = modifier
         )
-        Text(
-            text = "Hello Damola" ,
-            modifier = modifier
-        )
+
     }
 }
 

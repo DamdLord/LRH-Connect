@@ -38,6 +38,11 @@
     <string name="verify">Verify</string>
     <string name="password_match_error">Password does\'nt match </string>
     <string name="already_have_an_account">Already have an account?</string>
-    <string name="welcome_text">Welcome to Loyarahi.com your trusted digital platform.
-We are committed to delivering reliable services, smooth transactions, and excellent user experience. Thank you for joining us. YOU DON'T NEED TO VERIFY YOUR ACCOUNT BEFORE FUNDING YOUR WALLET.</string>
+    <string name="available_balance">Available balance</string>
+    <string name="fund_wallet">Fund Wallet</string>
+    <string name="api_level">Api Level</string>
+    <string name="account_status">Account Status:</string>
+    <string name="how_are_you_doing">How are you doing today?</string>
+    <string name="total_transactions">Total Transactions</string>
+    <string name="welcome_text">Welcome to Loyarahi.com your trusted digital platform. We are committed to delivering reliable services, smooth transactions, and excellent user experience. Thank you for joining us. YOU DON\'T NEED TO VERIFY YOUR ACCOUNT BEFORE FUNDING YOUR WALLET.</string>
 </resources>

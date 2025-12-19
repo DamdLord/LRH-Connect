@@ -15,6 +15,8 @@ import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import com.example.lrh.data.DataStoreHelper
 import com.example.lrh.data.Dialog
+import com.example.lrh.screens.Data
+import com.example.lrh.screens.Home
 import com.example.lrh.screens.Login
 import com.example.lrh.screens.Onboarding
 import com.example.lrh.screens.Register
@@ -67,6 +69,7 @@ fun MainApp(
                 Login(
                     onLoginClick = {
                         showWelcomeDialog = true
+                        navController.navigate(Screens.Home.name)
                     },
                     onRetrieveClick = {navController.navigate(Screens.RetrieveAccount.name)},
                     onRegisterClick = {
@@ -90,11 +93,25 @@ fun MainApp(
                     }
                 )
             }
+            composable(route = Screens.Home.name) {
+                Home(
+                    navController = navController
+                )
+            }
+            composable(route = Screens.Data.name) {
+                Data(
+                    onBackClick = {
+                        navController.navigate(Screens.Home.name)
+                    }
+                )
+            }
 
         }
     }
     if (showWelcomeDialog){
-        Dialog()
+        Dialog(
+            onDismissRequest = { showWelcomeDialog = false }
+        )
     }
 
 }

@@ -7,8 +7,8 @@ enum class Screens(title:String){
     Register("Register"),
     Login("Login"),
     RetrieveAccount("RetrieveAccount"),
-
-    Home("Home")
+    Home("Home"),
+    Data("Data")
 }
 
 class MainViewModel(
