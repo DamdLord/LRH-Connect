@@ -83,7 +83,6 @@ fun LoginCard(
     var emailOrUsername by rememberSaveable { mutableStateOf("") }
     var passwordInput by rememberSaveable { mutableStateOf("") }
     var seePassword by rememberSaveable { mutableStateOf(false) }
-
     ElevatedCard(
         modifier = Modifier
             .fillMaxWidth(0.9f)

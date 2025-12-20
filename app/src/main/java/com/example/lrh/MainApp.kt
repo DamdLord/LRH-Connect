@@ -39,7 +39,6 @@ fun MainApp(
     val  context = LocalContext.current
     var showWelcomeDialog by remember { mutableStateOf(false) }
 
-
     LaunchedEffect(Unit) {
         isFirstLaunch = DataStoreHelper.isFirstLaunch(context)
 

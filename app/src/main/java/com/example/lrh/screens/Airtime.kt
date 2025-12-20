@@ -112,8 +112,6 @@ fun Airtime(
                                     .fillMaxSize()
                                     .padding(8.dp),
                                 horizontalAlignment = Alignment.Start,
-
-
                                 ) {
                                 ExposedDropdownMenuBox(
                                     expanded = isSelectNetworkDropdownExpanded,

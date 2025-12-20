@@ -343,7 +343,6 @@ fun ScrollingText(text: String) {
         ),
         label = ""
     )
-
     Text(
         text = text,
         modifier = Modifier.offset(x = offsetX.dp),

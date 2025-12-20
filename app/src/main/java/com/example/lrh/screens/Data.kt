@@ -66,7 +66,6 @@ fun Data(
     var selectedDataPlan by rememberSaveable { mutableStateOf("") }
     var selectedDataType by rememberSaveable { mutableStateOf("") }
     var numberInput by rememberSaveable { mutableStateOf("") }
-
     val dataTypeList = when(selectedOption){
         NetworkList.networkList[1] -> DataType.MTNDataTypeList
         NetworkList.networkList[2] -> DataType.AirtelDataType

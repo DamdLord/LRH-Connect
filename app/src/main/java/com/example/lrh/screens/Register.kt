@@ -49,6 +49,7 @@ fun Register(
     onRegisterClick: () -> Unit,
     onLoginClick: () -> Unit
 ) {
+
     var firstName by rememberSaveable { mutableStateOf("") }
     var lastName by rememberSaveable { mutableStateOf("") }
     var username by rememberSaveable { mutableStateOf("") }

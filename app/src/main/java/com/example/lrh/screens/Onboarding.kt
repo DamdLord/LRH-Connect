@@ -74,7 +74,6 @@ fun Onboarding(
                 .padding(innerPadding)
                 .verticalScroll(rememberScrollState())
         ) {
-
             Box(
                 modifier = modifier
                     .fillMaxWidth()

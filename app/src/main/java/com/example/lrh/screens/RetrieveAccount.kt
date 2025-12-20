@@ -72,7 +72,6 @@ fun RetrieveAccount(
             )
         }
     ) { padding ->
-
         Box(
             modifier = modifier
                 .fillMaxSize()
