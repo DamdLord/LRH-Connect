@@ -15,6 +15,7 @@ import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import com.example.lrh.data.DataStoreHelper
 import com.example.lrh.data.Dialog
+import com.example.lrh.screens.Airtime
 import com.example.lrh.screens.Data
 import com.example.lrh.screens.Home
 import com.example.lrh.screens.Login
@@ -103,6 +104,11 @@ fun MainApp(
                     onBackClick = {
                         navController.navigate(Screens.Home.name)
                     }
+                )
+            }
+            composable(route = Screens.Airtime.name) {
+                Airtime(
+                    onBackClick = { navController.navigate(Screens.Home.name)}
                 )
             }
 

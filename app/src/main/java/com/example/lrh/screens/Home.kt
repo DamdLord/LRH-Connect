@@ -37,6 +37,7 @@ import androidx.compose.material3.ModalDrawerSheet
 import androidx.compose.material3.ModalNavigationDrawer
 import androidx.compose.material3.NavigationDrawerItem
 import androidx.compose.material3.OutlinedCard
+import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.rememberDrawerState
 import androidx.compose.runtime.Composable
@@ -91,239 +92,241 @@ fun Home(
             }
         }
     ) {
-        Column(
-            modifier
-                .fillMaxSize()
-                .padding(5.dp)
-
-        ) {
-            IconButton(
-                onClick = { scope.launch { drawerState.open() } },
-            ) {
-                Icon(
-                    Icons.Default.Menu,
-                    contentDescription = null,
-                    tint = MaterialTheme.colorScheme.primary
-                )
-            }
+        Scaffold() {innerPadding ->
             Column(
                 modifier
-                    .fillMaxWidth()
-                    .verticalScroll(rememberScrollState())
-                    .padding(5.dp)
+                    .fillMaxSize()
+                    .padding(innerPadding)
+
             ) {
-                Text(
-                    text = "Hey, John Doe!",
-                    fontSize = 23.sp,
-                    fontWeight = FontWeight.SemiBold,
-                )
-                Spacer(modifier = modifier.padding(5.dp))
-                ElevatedCard(
-                    elevation = CardDefaults.elevatedCardElevation(10.dp),
-                    colors = CardDefaults.elevatedCardColors(MaterialTheme.colorScheme.primary),
-                    shape = RoundedCornerShape(10.dp),
-                    modifier = modifier
-                        .fillMaxWidth()
+                IconButton(
+                    onClick = { scope.launch { drawerState.open() } },
                 ) {
-                    Column(
-                        modifier
-                            .fillMaxSize()
-                            .padding(10.dp)
+                    Icon(
+                        Icons.Default.Menu,
+                        contentDescription = null,
+                        tint = MaterialTheme.colorScheme.primary
+                    )
+                }
+                Column(
+                    modifier
+                        .fillMaxWidth()
+                        .verticalScroll(rememberScrollState())
+                        .padding(5.dp)
+                ) {
+                    Text(
+                        text = "Hey, John Doe!",
+                        fontSize = 23.sp,
+                        fontWeight = FontWeight.SemiBold,
+                    )
+                    Spacer(modifier = modifier.padding(5.dp))
+                    ElevatedCard(
+                        elevation = CardDefaults.elevatedCardElevation(10.dp),
+                        colors = CardDefaults.elevatedCardColors(MaterialTheme.colorScheme.primary),
+                        shape = RoundedCornerShape(10.dp),
+                        modifier = modifier
+                            .fillMaxWidth()
                     ) {
-                        Text(
-                            text = stringResource(R.string.available_balance),
-                            fontSize = 20.sp,
-                            fontWeight = FontWeight.SemiBold,
-                            color = MaterialTheme.colorScheme.secondary
-                        )
-                        Row(
-                            modifier.fillMaxWidth(),
-                            verticalAlignment = Alignment.CenterVertically,
-                            horizontalArrangement = Arrangement.SpaceBetween
+                        Column(
+                            modifier
+                                .fillMaxSize()
+                                .padding(10.dp)
                         ) {
                             Text(
-                                text = "₦11",
-                                color = MaterialTheme.colorScheme.onPrimary,
-                                fontSize = 25.sp,
-                                fontWeight = FontWeight.Bold
-
+                                text = stringResource(R.string.available_balance),
+                                fontSize = 20.sp,
+                                fontWeight = FontWeight.SemiBold,
+                                color = MaterialTheme.colorScheme.secondary
                             )
-                            Card(
-                                onClick = {},
-                                elevation = CardDefaults.elevatedCardElevation(10.dp),
-                                shape = RoundedCornerShape(10.dp),
-                                colors = CardDefaults.cardColors(MaterialTheme.colorScheme.onPrimary),
-                                modifier = modifier.size(width = 130.dp, height = 45.dp)
-                            ){
-                                Box(
-                                    modifier.fillMaxSize(),
-                                    contentAlignment = Alignment.Center
+                            Row(
+                                modifier.fillMaxWidth(),
+                                verticalAlignment = Alignment.CenterVertically,
+                                horizontalArrangement = Arrangement.SpaceBetween
+                            ) {
+                                Text(
+                                    text = "₦11",
+                                    color = MaterialTheme.colorScheme.onPrimary,
+                                    fontSize = 25.sp,
+                                    fontWeight = FontWeight.Bold
 
+                                )
+                                Card(
+                                    onClick = {},
+                                    elevation = CardDefaults.elevatedCardElevation(10.dp),
+                                    shape = RoundedCornerShape(10.dp),
+                                    colors = CardDefaults.cardColors(MaterialTheme.colorScheme.onPrimary),
+                                    modifier = modifier.size(width = 130.dp, height = 45.dp)
                                 ) {
-                                    Row(
-                                        verticalAlignment = Alignment.CenterVertically,
-                                        horizontalArrangement = Arrangement.SpaceAround,
-                                        modifier = modifier
-                                            .fillMaxWidth()
-                                            .padding(5.dp)
+                                    Box(
+                                        modifier.fillMaxSize(),
+                                        contentAlignment = Alignment.Center
+
                                     ) {
-                                        Icon(
-                                            imageVector = Icons.Outlined.Wallet,
-                                            contentDescription = "",
-                                            tint = MaterialTheme.colorScheme.primary
-                                        )
-                                        Text(
-                                            text = stringResource(R.string.fund_wallet),
-                                            color = MaterialTheme.colorScheme.primary,
-                                            fontWeight = FontWeight.SemiBold
-                                        )
+                                        Row(
+                                            verticalAlignment = Alignment.CenterVertically,
+                                            horizontalArrangement = Arrangement.SpaceAround,
+                                            modifier = modifier
+                                                .fillMaxWidth()
+                                                .padding(5.dp)
+                                        ) {
+                                            Icon(
+                                                imageVector = Icons.Outlined.Wallet,
+                                                contentDescription = "",
+                                                tint = MaterialTheme.colorScheme.primary
+                                            )
+                                            Text(
+                                                text = stringResource(R.string.fund_wallet),
+                                                color = MaterialTheme.colorScheme.primary,
+                                                fontWeight = FontWeight.SemiBold
+                                            )
+                                        }
                                     }
                                 }
                             }
+                            Spacer(modifier.height(10.dp))
+                            Row(
+                                modifier.fillMaxWidth(),
+                                verticalAlignment = Alignment.CenterVertically,
+                                horizontalArrangement = Arrangement.SpaceAround
+                            ) {
+                                Column(
+                                    horizontalAlignment = Alignment.CenterHorizontally,
+                                    verticalArrangement = Arrangement.Center
+
+                                ) {
+                                    Text(
+                                        text = stringResource(R.string.api_level),
+                                        color = MaterialTheme.colorScheme.secondary,
+                                        fontWeight = FontWeight.SemiBold,
+                                        fontSize = 20.sp,
+                                    )
+                                    Text(
+                                        text = "1",
+                                        fontWeight = FontWeight.SemiBold,
+                                        fontSize = 20.sp,
+                                        color = MaterialTheme.colorScheme.onPrimary
+                                    )
+                                }
+                                Column(
+                                    horizontalAlignment = Alignment.CenterHorizontally,
+                                    verticalArrangement = Arrangement.Center
+
+                                ) {
+                                    Text(
+                                        text = stringResource(R.string.total_transactions),
+                                        color = MaterialTheme.colorScheme.secondary,
+                                        fontWeight = FontWeight.SemiBold,
+                                        fontSize = 20.sp,
+                                    )
+                                    Text(
+                                        text = "13",
+                                        fontWeight = FontWeight.SemiBold,
+                                        fontSize = 20.sp,
+                                        color = MaterialTheme.colorScheme.onPrimary
+                                    )
+                                }
+                            }
+                            Spacer(modifier.height(10.dp))
+                            Row(
+                                modifier.fillMaxWidth(),
+                                verticalAlignment = Alignment.CenterVertically,
+                                horizontalArrangement = Arrangement.Start
+                            ) {
+                                Text(
+                                    text = stringResource(R.string.account_status),
+                                    fontWeight = FontWeight.Bold
+                                )
+                                Spacer(modifier.width(5.dp))
+                                Card(
+                                    shape = RectangleShape,
+                                    colors = CardDefaults.cardColors(Color.Red)
+                                ) {
+                                    Text(
+                                        "Not Verified",
+                                        color = Color.White,
+                                        modifier = modifier.padding(5.dp)
+                                    )
+                                }
+                            }
+                            ScrollingText(
+                                stringResource(R.string.how_are_you_doing)
+                            )
                         }
-                        Spacer(modifier.height(10.dp))
+                    }
+                    Spacer(modifier = modifier.height(10.dp))
+                    Column(
+                        modifier.fillMaxWidth(),
+                        verticalArrangement = Arrangement.SpaceAround,
+                        horizontalAlignment = Alignment.CenterHorizontally
+                    ) {
                         Row(
                             modifier.fillMaxWidth(),
-                            verticalAlignment = Alignment.CenterVertically,
                             horizontalArrangement = Arrangement.SpaceAround
                         ) {
-                            Column(
-                                horizontalAlignment = Alignment.CenterHorizontally,
-                                verticalArrangement = Arrangement.Center
-
-                            ) {
-                                Text(
-                                    text = stringResource(R.string.api_level),
-                                    color = MaterialTheme.colorScheme.secondary,
-                                    fontWeight = FontWeight.SemiBold,
-                                    fontSize = 20.sp,
-                                )
-                                Text(
-                                    text = "1",
-                                    fontWeight = FontWeight.SemiBold,
-                                    fontSize = 20.sp,
-                                    color = MaterialTheme.colorScheme.onPrimary
-                                )
-                            }
-                            Column(
-                                horizontalAlignment = Alignment.CenterHorizontally,
-                                verticalArrangement = Arrangement.Center
-
-                            ) {
-                                Text(
-                                    text = stringResource(R.string.total_transactions),
-                                    color = MaterialTheme.colorScheme.secondary,
-                                    fontWeight = FontWeight.SemiBold,
-                                    fontSize = 20.sp,
-                                )
-                                Text(
-                                    text = "13",
-                                    fontWeight = FontWeight.SemiBold,
-                                    fontSize = 20.sp,
-                                    color = MaterialTheme.colorScheme.onPrimary
-                                )
-                            }
+                            ServiceOptionCard(
+                                image = painterResource(R.drawable.buy_data),
+                                text = "Buy Data",
+                                onClick = { navController.navigate(Screens.Data.name) }
+                            )
+                            ServiceOptionCard(
+                                image = painterResource(R.drawable.airtime),
+                                text = "Airtime",
+                                onClick = { navController.navigate(Screens.Airtime.name) }
+                            )
                         }
                         Spacer(modifier.height(10.dp))
                         Row(
                             modifier.fillMaxWidth(),
-                            verticalAlignment = Alignment.CenterVertically,
-                            horizontalArrangement = Arrangement.Start
+                            horizontalArrangement = Arrangement.SpaceAround
                         ) {
-                            Text(
-                                text = stringResource(R.string.account_status),
-                                fontWeight = FontWeight.Bold
+                            ServiceOptionCard(
+                                image = painterResource(R.drawable.bill_payment),
+                                text = "Bill Payment",
+                                onClick = {}
                             )
-                            Spacer(modifier.width(5.dp))
-                            Card(
-                                shape = RectangleShape,
-                                colors = CardDefaults.cardColors(Color.Red)
-                            ) {
-                                Text(
-                                    "Not Verified",
-                                    color = Color.White,
-                                    modifier = modifier.padding(5.dp)
-                                )
-                            }
+                            ServiceOptionCard(
+                                image = painterResource(R.drawable.bulk_sms),
+                                text = "Bulk SMS",
+                                onClick = {}
+                            )
                         }
-                        ScrollingText(
-                            stringResource(R.string.how_are_you_doing)
-                        )
+                        Spacer(modifier.height(10.dp))
+                        Row(
+                            modifier.fillMaxWidth(),
+                            horizontalArrangement = Arrangement.SpaceAround
+                        ) {
+                            ServiceOptionCard(
+                                image = painterResource(R.drawable.cable),
+                                text = "Cable Subscription",
+                                onClick = {}
+                            )
+                            ServiceOptionCard(
+                                image = painterResource(R.drawable.result),
+                                text = "Result Checker",
+                                onClick = {}
+                            )
+                        }
+                        Spacer(modifier.height(10.dp))
+                        Row(
+                            modifier.fillMaxWidth(),
+                            horizontalArrangement = Arrangement.SpaceAround
+                        ) {
+                            ServiceOptionCard(
+                                image = painterResource(R.drawable.air2cash),
+                                text = "Airtime2Cash",
+                                onClick = {}
+                            )
+                            ServiceOptionCard(
+                                image = painterResource(R.drawable.api),
+                                text = "Api Documentation",
+                                onClick = {}
+                            )
+                        }
                     }
-                }
-                Spacer(modifier = modifier.height(10.dp))
-                Column(
-                    modifier.fillMaxWidth(),
-                    verticalArrangement = Arrangement.SpaceAround,
-                    horizontalAlignment = Alignment.CenterHorizontally
-                ) {
-                    Row(
-                        modifier.fillMaxWidth(),
-                        horizontalArrangement = Arrangement.SpaceAround
-                    ) {
-                        ServiceOptionCard(
-                            image = painterResource(R.drawable.buy_data),
-                            text = "Buy Data",
-                            onClick = { navController.navigate(Screens.Data.name)}
-                        )
-                        ServiceOptionCard(
-                            image = painterResource(R.drawable.airtime),
-                            text = "Airtime",
-                            onClick = {}
-                        )
-                    }
-                    Spacer(modifier.height(10.dp))
-                    Row(
-                        modifier.fillMaxWidth(),
-                        horizontalArrangement = Arrangement.SpaceAround
-                    ) {
-                        ServiceOptionCard(
-                            image = painterResource(R.drawable.bill_payment),
-                            text = "Bill Payment",
-                            onClick = {}
-                        )
-                        ServiceOptionCard(
-                            image = painterResource(R.drawable.bulk_sms),
-                            text = "Bulk SMS",
-                            onClick = {}
-                        )
-                    }
-                    Spacer(modifier.height(10.dp))
-                    Row(
-                        modifier.fillMaxWidth(),
-                        horizontalArrangement = Arrangement.SpaceAround
-                    ) {
-                        ServiceOptionCard(
-                            image = painterResource(R.drawable.cable),
-                            text = "Cable Subscription",
-                            onClick = {}
-                        )
-                        ServiceOptionCard(
-                            image = painterResource(R.drawable.result),
-                            text = "Result Checker",
-                            onClick = {}
-                        )
-                    }
-                    Spacer(modifier.height(10.dp))
-                    Row(
-                        modifier.fillMaxWidth(),
-                        horizontalArrangement = Arrangement.SpaceAround
-                    ) {
-                        ServiceOptionCard(
-                            image = painterResource(R.drawable.air2cash),
-                            text = "Airtime2Cash",
-                            onClick = {}
-                        )
-                        ServiceOptionCard(
-                            image = painterResource(R.drawable.api),
-                            text = "Api Documentation",
-                            onClick = {}
-                        )
-                    }
+
                 }
 
             }
-
         }
     }
 }
@@ -336,7 +339,7 @@ fun ScrollingText(text: String) {
         initialValue = 200f,
         targetValue = -700f,
         animationSpec = infiniteRepeatable(
-            animation = tween(10000, easing = LinearEasing)
+            animation = tween(8000, easing = LinearEasing)
         ),
         label = ""
     )
@@ -344,7 +347,8 @@ fun ScrollingText(text: String) {
     Text(
         text = text,
         modifier = Modifier.offset(x = offsetX.dp),
-        maxLines = 1
+        maxLines = 1,
+        fontSize = 20.sp
     )
 }
 
@@ -362,7 +366,9 @@ fun ServiceOptionCard(
     ) {
         Box(
             contentAlignment = Alignment.Center,
-            modifier = modifier.fillMaxSize().padding(5.dp)
+            modifier = modifier
+                .fillMaxSize()
+                .padding(5.dp)
         ) {
             Column(
                 modifier = modifier.fillMaxWidth(),

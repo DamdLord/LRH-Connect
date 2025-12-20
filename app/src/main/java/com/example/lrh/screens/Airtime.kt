@@ -1,4 +1,5 @@
 package com.example.lrh.screens
+
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -48,100 +49,19 @@ import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.lrh.R
-import com.example.lrh.data.DataPlanList
-import com.example.lrh.data.DataType
-import com.example.lrh.data.NetworkList
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun Data(
+fun Airtime(
     modifier: Modifier = Modifier,
     onBackClick: () -> Unit
 ){
-    var isSelectNetworkDropdownExpanded by rememberSaveable { mutableStateOf(false) }
-    var isSelectPlanDropdownExpanded by rememberSaveable { mutableStateOf(false) }
-    var isSelectTypeDropdownExpanded by rememberSaveable { mutableStateOf(false) }
-    var bypassValidatorChecked by rememberSaveable { mutableStateOf(false) }
-    var selectedOption by rememberSaveable { mutableStateOf("") }
-    var selectedDataPlan by rememberSaveable { mutableStateOf("") }
-    var selectedDataType by rememberSaveable { mutableStateOf("") }
-    var numberInput by rememberSaveable { mutableStateOf("") }
+    var phoneNumber by rememberSaveable{ mutableStateOf("") }
+    var amount by rememberSaveable{ mutableStateOf("") }
+    var selectedOption by rememberSaveable{ mutableStateOf("") }
+    var bypassValidatorChecked by rememberSaveable{ mutableStateOf(false) }
+    var isSelectNetworkDropdownExpanded by rememberSaveable{ mutableStateOf(false) }
 
-    val dataTypeList = when(selectedOption){
-        NetworkList.networkList[1] -> DataType.MTNDataTypeList
-        NetworkList.networkList[2] -> DataType.AirtelDataType
-        NetworkList.networkList[3] -> DataType.NineMobileDtaType
-        NetworkList.networkList[4] -> DataType.GLODtaType
-        else -> listOf()
-    }
-    val dataPlanList = when(selectedOption to selectedDataType){
-        NetworkList.networkList[1] to DataType.MTNDataTypeList[1] -> DataPlanList.mtnSME
-        NetworkList.networkList[1] to DataType.MTNDataTypeList[2] -> DataPlanList.mtnGifting
-        NetworkList.networkList[1] to DataType.MTNDataTypeList[3] -> DataPlanList.ntnCorporate
-        NetworkList.networkList[1] to DataType.MTNDataTypeList[4] -> DataPlanList.mtnSmePlus
-        NetworkList.networkList[2] to DataType.AirtelDataType[1] -> DataPlanList.airtelGifting
-        NetworkList.networkList[2] to DataType.AirtelDataType[2] -> DataPlanList.airtelCorporate
-        NetworkList.networkList[4] to DataType.GLODtaType[1] -> DataPlanList.gloCorporate
-        NetworkList.networkList[4] to DataType.GLODtaType[2] -> DataPlanList.gloGifting
-        NetworkList.networkList[4] to DataType.GLODtaType[3] -> DataPlanList.gloAwoof
-        NetworkList.networkList[3] to DataType.NineMobileDtaType[1] -> DataPlanList.nineMobileCorporate
-        else -> listOf("")
-    }
-    val  amountToPay = when(selectedOption to selectedDataType to selectedDataPlan){
-        //MTN SME
-        NetworkList.networkList[1] to DataType.MTNDataTypeList[1] to DataPlanList.mtnSME[1] -> "680"
-        NetworkList.networkList[1] to DataType.MTNDataTypeList[1] to DataPlanList.mtnSME[2] -> "1350"
-        NetworkList.networkList[1] to DataType.MTNDataTypeList[1] to DataPlanList.mtnSME[3] -> "1989"
-        NetworkList.networkList[1] to DataType.MTNDataTypeList[1] to DataPlanList.mtnSME[4] -> "3300"
-        NetworkList.networkList[1] to DataType.MTNDataTypeList[1] to DataPlanList.mtnSME[5] -> "5050"
-        // MTN /Gifting
-        NetworkList.networkList[1] to DataType.MTNDataTypeList[2] to DataPlanList.mtnGifting[1] -> "480"
-        NetworkList.networkList[1] to DataType.MTNDataTypeList[2] to DataPlanList.mtnGifting[2] -> "850"
-        NetworkList.networkList[1] to DataType.MTNDataTypeList[2] to DataPlanList.mtnGifting[3] -> "1580"
-        NetworkList.networkList[1] to DataType.MTNDataTypeList[2] to DataPlanList.mtnGifting[4] -> "550"
-        NetworkList.networkList[1] to DataType.MTNDataTypeList[2] to DataPlanList.mtnGifting[5] -> "650"
-        NetworkList.networkList[1] to DataType.MTNDataTypeList[2] to DataPlanList.mtnGifting[6] -> "850"
-        // MTN / Corporate
-        NetworkList.networkList[1] to DataType.MTNDataTypeList[3] to DataPlanList.ntnCorporate[1]-> "450"
-        NetworkList.networkList[1] to DataType.MTNDataTypeList[3] to DataPlanList.ntnCorporate[2]-> "750"
-        NetworkList.networkList[1] to DataType.MTNDataTypeList[3] to DataPlanList.ntnCorporate[3]-> "1350"
-        NetworkList.networkList[1] to DataType.MTNDataTypeList[3] to DataPlanList.ntnCorporate[4]-> "1850"
-        NetworkList.networkList[1] to DataType.MTNDataTypeList[3] to DataPlanList.ntnCorporate[5]-> "3050"
-        // AIRTEL/ Gifting
-        NetworkList.networkList[2] to DataType.AirtelDataType[1] to DataPlanList.airtelGifting[1]-> "480"
-        NetworkList.networkList[2] to DataType.AirtelDataType[1] to DataPlanList.airtelGifting[2]-> "680"
-        NetworkList.networkList[2] to DataType.AirtelDataType[1] to DataPlanList.airtelGifting[3]-> "1200"
-        NetworkList.networkList[2] to DataType.AirtelDataType[1] to DataPlanList.airtelGifting[4]-> "2200"
-        NetworkList.networkList[2] to DataType.AirtelDataType[1] to DataPlanList.airtelGifting[5]-> "3250"
-        // AIRTEL/Corporate
-        NetworkList.networkList[2] to DataType.AirtelDataType[2] to DataPlanList.airtelCorporate[1]-> "550"
-        NetworkList.networkList[2] to DataType.AirtelDataType[2] to DataPlanList.airtelCorporate[2]-> "850"
-        NetworkList.networkList[2] to DataType.AirtelDataType[2] to DataPlanList.airtelCorporate[3]-> "1550"
-        NetworkList.networkList[2] to DataType.AirtelDataType[2] to DataPlanList.airtelCorporate[4]-> "2000"
-        // NINE MOBILE/Corporate
-        NetworkList.networkList[3] to DataType.NineMobileDtaType[1] to DataPlanList.nineMobileCorporate[0]-> ""
-        // GLO/Corporate
-        NetworkList.networkList[4] to DataType.GLODtaType[1] to DataPlanList.gloCorporate[1]-> "350"
-        NetworkList.networkList[4] to DataType.GLODtaType[1] to DataPlanList.gloCorporate[2]-> "250"
-        NetworkList.networkList[4] to DataType.GLODtaType[1] to DataPlanList.gloCorporate[3]-> "4350"
-        NetworkList.networkList[4] to DataType.GLODtaType[1] to DataPlanList.gloCorporate[4]-> "450"
-        NetworkList.networkList[4] to DataType.GLODtaType[1] to DataPlanList.gloCorporate[5]-> "880"
-        NetworkList.networkList[4] to DataType.GLODtaType[1] to DataPlanList.gloCorporate[6]-> "1320"
-        NetworkList.networkList[4] to DataType.GLODtaType[1] to DataPlanList.gloCorporate[7]-> "2180"
-        NetworkList.networkList[4] to DataType.GLODtaType[1] to DataPlanList.gloCorporate[8]-> "315"
-        NetworkList.networkList[4] to DataType.GLODtaType[1] to DataPlanList.gloCorporate[9]-> "920"
-        NetworkList.networkList[4] to DataType.GLODtaType[1] to DataPlanList.gloCorporate[10]-> "1520"
-        NetworkList.networkList[4] to DataType.GLODtaType[1] to DataPlanList.gloCorporate[11]-> "278"
-        NetworkList.networkList[4] to DataType.GLODtaType[1] to DataPlanList.gloCorporate[12]-> "790"
-
-        // GLO/GIFTING
-        NetworkList.networkList[4] to DataType.GLODtaType[2] to DataPlanList.gloGifting[1] -> "250"
-        NetworkList.networkList[4] to DataType.GLODtaType[2] to DataPlanList.gloGifting[2] -> "350"
-        NetworkList.networkList[4] to DataType.GLODtaType[2] to DataPlanList.gloGifting[3] -> "550"
-        NetworkList.networkList[4] to DataType.GLODtaType[2] to DataPlanList.gloGifting[4] -> "2050"
-
-        else -> ""
-    }
     Scaffold(
         topBar = {
             TopAppBar(
@@ -153,21 +73,19 @@ fun Data(
                             imageVector = Icons.AutoMirrored.Filled.ArrowBack,
                             contentDescription = "Back",
                             tint = MaterialTheme.colorScheme.primary,
-                            modifier = modifier.size(35.dp)
+                            modifier = modifier.size(30.dp)
                         )
                     }
                 },
-                expandedHeight = 46.dp
+                expandedHeight = 40.dp
             )
         }
     ) {innerPadding->
         Column(
             modifier
                 .fillMaxSize()
-                .padding(innerPadding),
-            //horizontalAlignment = Alignment.CenterHorizontally,
-            //verticalArrangement = Arrangement.Center
-        ) {
+                .padding(innerPadding)
+        ){
             Card(
                 modifier
                     .fillMaxWidth()
@@ -182,7 +100,7 @@ fun Data(
                     Column(
                         modifier.fillMaxWidth()
                     ) {
-                        ScrollingText("Purchase data bundles at discounted price!")
+                        ScrollingText("2% discount on every purchase")
                         Card(
                             modifier
                                 .fillMaxWidth()
@@ -196,7 +114,7 @@ fun Data(
                                 horizontalAlignment = Alignment.Start,
 
 
-                            ) {
+                                ) {
                                 ExposedDropdownMenuBox(
                                     expanded = isSelectNetworkDropdownExpanded,
                                     onExpandedChange = {
@@ -205,8 +123,8 @@ fun Data(
                                     }
                                 ) {
                                     OutlinedTextField(
-                                        value = numberInput,
-                                        onValueChange = { numberInput = it },
+                                        value = phoneNumber,
+                                        onValueChange = { phoneNumber = it },
                                         readOnly = false,
                                         singleLine = true,
                                         keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Phone, imeAction = ImeAction.Done),
@@ -382,85 +300,16 @@ fun Data(
                                 }
                                 Spacer(modifier.height(10.dp))
                                 Text(
-                                    "Data Packages"
+                                    "Amount"
                                 )
-                                Spacer(modifier.height(10.dp))
-                                ExposedDropdownMenuBox(
-                                    expanded = isSelectTypeDropdownExpanded,
-                                    onExpandedChange = { isSelectTypeDropdownExpanded = !isSelectTypeDropdownExpanded}
-                                ) {
-                                    OutlinedTextField(
-                                        value = selectedDataType,
-                                        onValueChange = {},
-                                        readOnly = true,
-                                        label = { Text("Select type") },
-                                        trailingIcon = {
-                                            ExposedDropdownMenuDefaults.TrailingIcon(expanded = isSelectTypeDropdownExpanded)
-                                        },
-                                        modifier = modifier
-                                            .fillMaxWidth()
-                                            .menuAnchor()
-                                    )
-
-                                    ExposedDropdownMenu(
-                                        expanded = isSelectTypeDropdownExpanded,
-                                        onDismissRequest = { isSelectTypeDropdownExpanded = false }
-                                    ) {
-                                        dataTypeList.forEach { option ->
-                                            DropdownMenuItem(
-                                                text = { Text(option) },
-                                                onClick = {
-                                                    selectedDataType = option
-                                                    isSelectTypeDropdownExpanded = false
-                                                }
-                                            )
-                                        }
-                                    }
-                                }
-                                Spacer(modifier.height(10.dp))
-                                Text(
-                                    "Data Plans"
-                                )
-                                Spacer(modifier.height(10.dp))
-                                ExposedDropdownMenuBox(
-                                    expanded = isSelectPlanDropdownExpanded,
-                                    onExpandedChange = { isSelectPlanDropdownExpanded = !isSelectPlanDropdownExpanded}
-                                ) {
-                                    OutlinedTextField(
-                                        value = selectedDataPlan,
-                                        onValueChange = {},
-                                        readOnly = true,
-                                        label = { Text(text = "Select Plan") },
-                                        trailingIcon = {
-                                            ExposedDropdownMenuDefaults.TrailingIcon(expanded = isSelectPlanDropdownExpanded)
-                                        },
-                                        modifier = modifier
-                                            .fillMaxWidth()
-                                            .menuAnchor()
-                                    )
-
-                                    ExposedDropdownMenu(
-                                        expanded = isSelectPlanDropdownExpanded,
-                                        onDismissRequest = { isSelectPlanDropdownExpanded = false }
-                                    ) {
-                                        dataPlanList.forEach { option ->
-                                            DropdownMenuItem(
-                                                text = { Text(option) },
-                                                onClick = {
-                                                    selectedDataPlan = option
-                                                    isSelectPlanDropdownExpanded = false
-                                                }
-                                            )
-                                        }
-                                    }
-                                }
                                 Spacer(modifier.height(10.dp))
                                 OutlinedTextField(
-                                    value = amountToPay,
-                                    onValueChange = {},
-                                    readOnly = true,
-                                    label = { Text(text = "Amount to pay") },
-                                    modifier = modifier.fillMaxWidth()
+                                    value = amount,
+                                    onValueChange = { amount = it},
+                                    readOnly = false,
+                                    maxLines = 1 ,
+                                    modifier = modifier.fillMaxWidth(),
+                                    keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Phone, imeAction = ImeAction.Done)
                                 )
                                 Spacer(modifier.height(10.dp))
                                 Row(
@@ -495,5 +344,7 @@ fun Data(
 
             }
         }
+
     }
+
 }

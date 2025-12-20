@@ -8,7 +8,9 @@ enum class Screens(title:String){
     Login("Login"),
     RetrieveAccount("RetrieveAccount"),
     Home("Home"),
-    Data("Data")
+    Data("Data"),
+
+    Airtime("Airtime")
 }
 
 class MainViewModel(
