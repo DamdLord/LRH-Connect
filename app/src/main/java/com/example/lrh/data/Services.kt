@@ -145,41 +145,57 @@ object DataPlanList{
 
 object CableTvProviderServiceList{
     val GOTVServiceList = listOf(
-        "GOTV LITE/₦1575/MONTH",
-        "GOTV JINJA/₦3300/MONTH",
-        "GOTV JOLLI/₦4850/MONTH",
-        "GOTV MAX/₦7200/MONTH",
-        "GOTV SUPA/₦9600/MONTH",
-        "GOTV SUPA PLUS/₦15700/MONTH"
+        "GOTV SMALLIE/₦1900/MONTH",
+        "GOTV JOLLI/₦45800/MONTH",
+        "GOTV JINJA/₦3900/MONTH",
+        "GOTV MAX/₦8500/MONTH",
+        "GOTV SUPA/₦11400/MONTH",
+        "GOTV SUPA PLUS/₦16800/MONTH"
     )
     val DSTVServiceList = listOf(
-        "DSTV PADI/₦3600/MONTH",
-        "DSTV YANGA/₦5100/MONTH",
-        "DSTV CONFAM/₦9300/MONTH",
-        "DSTV COMPACT/₦15700/MONTH",
-        "DSTV COMPACT PLUS/₦25000/MONTH",
-        "DSTV COMPACT PLUS+XtraView/₦30000/MONTH"
+        "DSTV PADI/₦4400/MONTH",
+        "DSTV COMPACT/₦19000/MONTH",
+        "DSTV COMPACT PLUS/₦30000/MONTH",
+        "DSTV PREMIUM/₦44,500/MONTH",
+        "DSTV YANGA/₦6000/MONTH",
+        "DSTV CONFAM BOUQUET/₦11000/MONTH",
+        "DSTV PREMIUM + HD/EXTRA VIEW/₦214,745",
     )
     val STARTIMESServiceList = listOf(
-        "DTH NOVA/₦1900/MONTH",
-        "DTT NOVA/₦1900/MONTH",
-        "DTT BASIC/₦3700/MONTH",
-        "DTH BASIC/₦4700/MONTH",
-        "DTT CLASSIC/₦5500/MONTH"
+        "NOVA(DISH) WEEKLY/₦700",
+        "NOVA(DISH) MONTHLY/₦2,100",
+        "BASIC(DISH) WEEKLY/₦1,700",
+        "BASIC(DISH) MONTHLY/₦5,100",
+        "CLASSIC(DISH) WEEKLY/₦2,500",
+        "CLASSIC(DISH) MONTHLY/₦7,400",
+        "SUPER(DISH) WEEKLY/₦3,300",
+        "SUPER(DISH) MONTHLY/₦9,500",
+        "NOVA(ANTENNA) WEEKLY/₦700",
+        "NOVA(ANTENNA) MONTHLY/₦2,100",
+        "BASIC(ANTENNA) WEEKLY/₦1,400",
+        "BASIC(ANTENNA) MONTHLY/₦4,000",
+        "CLASSIC(ANTENNA) WEEKLY/₦2,000",
+        "CLASSIC(ANTENNA) MONTHLY/₦6,000",
+        "SUPER(ANTENNA) WEEKLY/₦3,200",
+        "SUPER(ANTENNA) MONTHLY/₦9,500",
+        "STARTIMES CHINESE(DISH)/₦1,600,000,000"
+
     )
 }
 
 object CableTvProvider{
-    val providerList = listOf("Select Provider", "GOTV", "DSTV", "STARTIMES")
+    val providerList = listOf("Select Provider", "DSTV", "GOTV", "STARTIMES")
 }
 
 object SubscriptionType{
     val subscriptionTypeList = listOf("Subscription type", "Change", "Renew")
 }
 object Discos{
-    val discosProviderList = listOf("Select Disco", "ABUJA ELECTRICITY", "EKO ELECTRICITY",
-        "KADUNA ELECTRICITY", "KANO ELECTRICITY", "JOS ELECTRICITY",
-        "IKEJA ELECTRICITY", "IBADAN ELECTRICITY", "PORT HARCOURT ELECTRICITY", "BENIN ELECTRICITY", "YOLA ELECTRICITY"
+    val discosProviderList = listOf(
+        "Select Disco", "ABUJA ELECTRICITY", "EKO ELECTRICITY",
+        "KADUNA ELECTRICITY", "KANO ELECTRICITY", "JOS ELECTRICITY", "ENUGU ELECTRICITY",
+        "IKEJA ELECTRICITY", "IBADAN ELECTRICITY", "PORT HART ELECTRICITY",
+        "BENIN ELECTRICITY", "ABA ELECTRICITY"
     )
 }
 

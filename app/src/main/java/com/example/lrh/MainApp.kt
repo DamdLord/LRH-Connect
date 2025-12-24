@@ -16,6 +16,9 @@ import androidx.navigation.compose.rememberNavController
 import com.example.lrh.data.DataStoreHelper
 import com.example.lrh.data.Dialog
 import com.example.lrh.screens.Airtime
+import com.example.lrh.screens.Bill
+import com.example.lrh.screens.BulkSMS
+import com.example.lrh.screens.CableTV
 import com.example.lrh.screens.Data
 import com.example.lrh.screens.Home
 import com.example.lrh.screens.Login
@@ -110,6 +113,22 @@ fun MainApp(
                     onBackClick = { navController.navigate(Screens.Home.name)}
                 )
             }
+            composable(route = Screens.Bill.name) {
+                Bill(
+                    onBackClick = { navController.navigate(Screens.Home.name)}
+                )
+            }
+            composable(route= Screens.BulkSMS.name) {
+                BulkSMS(
+                    onBackClick = { navController.navigate(Screens.Home.name)}
+                )
+            }
+            composable(route = Screens.CableTV.name) {
+                CableTV(
+                    onBackClick = { navController.navigate(Screens.Home.name)}
+                )
+            }
+
 
         }
     }

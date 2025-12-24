@@ -282,12 +282,12 @@ fun Home(
                             ServiceOptionCard(
                                 image = painterResource(R.drawable.bill_payment),
                                 text = "Bill Payment",
-                                onClick = {}
+                                onClick = { navController.navigate(Screens.Bill.name)}
                             )
                             ServiceOptionCard(
                                 image = painterResource(R.drawable.bulk_sms),
                                 text = "Bulk SMS",
-                                onClick = {}
+                                onClick = { navController.navigate(Screens.BulkSMS.name)}
                             )
                         }
                         Spacer(modifier.height(10.dp))
@@ -298,7 +298,7 @@ fun Home(
                             ServiceOptionCard(
                                 image = painterResource(R.drawable.cable),
                                 text = "Cable Subscription",
-                                onClick = {}
+                                onClick = { navController.navigate(Screens.CableTV.name)}
                             )
                             ServiceOptionCard(
                                 image = painterResource(R.drawable.result),

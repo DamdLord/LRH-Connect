@@ -10,7 +10,9 @@ enum class Screens(title:String){
     Home("Home"),
     Data("Data"),
     Airtime("Airtime"),
-    Bill("Bill")
+    Bill("Bill"),
+    BulkSMS("Bulk SMS"),
+    CableTV("CableTV")
 
 }
 
