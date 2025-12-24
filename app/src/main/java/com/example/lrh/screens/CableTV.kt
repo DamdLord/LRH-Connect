@@ -60,15 +60,15 @@ fun CableTV(
     var selectedOption by rememberSaveable { mutableStateOf("") }
     var isProviderDropdownExpanded by rememberSaveable { mutableStateOf(false) }
     var isSelectTypeDropdownExpanded by rememberSaveable { mutableStateOf(false) }
-    var amount by rememberSaveable { mutableStateOf("")}
     var selectedPackageType by rememberSaveable { mutableStateOf("")}
-    val subscriptionList = when(selectedOption){
+    var iucNumber by rememberSaveable { mutableStateOf("")}
+    var subscriptionList = when(selectedOption){
         providerList[1] -> DSTVServiceList
         providerList[2] -> GOTVServiceList
         providerList[3] -> STARTIMESServiceList
         else -> listOf()
     }
-    val amountToPay = when(selectedOption){
+    val amount = when(selectedPackageType){
         //GOTV
         GOTVServiceList[0] -> "1900"
         GOTVServiceList[1] -> "5800"
@@ -105,6 +105,7 @@ fun CableTV(
         STARTIMESServiceList[16] -> "1600000000"
         else -> ""
     }
+    var amountToPay by rememberSaveable { mutableStateOf(amount)}
     Scaffold(
         topBar = {
             TopAppBar(
@@ -153,7 +154,7 @@ fun CableTV(
                     Column(
                         modifier.fillMaxWidth()
                     ) {
-                        ScrollingText("₦50 charge on every purchase")
+                        ScrollingText("No discount on cable tv subscription")
                         Card(
                             modifier
                                 .fillMaxWidth()
@@ -253,6 +254,7 @@ fun CableTV(
                                             onClick = {
                                                 selectedOption = providerList[1]
                                                 isProviderDropdownExpanded = false
+                                                selectedPackageType = ""
                                             }
                                         )
                                         Spacer(modifier.height(5.dp))
@@ -274,6 +276,7 @@ fun CableTV(
                                             onClick = {
                                                 selectedOption = providerList[2]
                                                 isProviderDropdownExpanded = false
+                                                selectedPackageType = ""
                                             }
                                         )
                                         Spacer(modifier.height(5.dp))
@@ -295,6 +298,7 @@ fun CableTV(
                                             onClick = {
                                                 selectedOption = providerList[3]
                                                 isProviderDropdownExpanded = false
+                                                selectedPackageType = ""
                                             }
                                         )
                                     }
@@ -337,18 +341,22 @@ fun CableTV(
                                     }
                                 }
                                 Spacer(modifier.height(10.dp))
-                                Text(
-                                    "Amount"
+                                OutlinedTextField(
+                                    value = amount,
+                                    onValueChange = {},
+                                    label = { Text("Amount to pay") },
+                                    readOnly = true,
+                                    modifier = modifier.fillMaxWidth()
                                 )
                                 Spacer(modifier.height(10.dp))
                                 OutlinedTextField(
-                                    value = amount,
-                                    onValueChange = {amount = it},
+                                    value = iucNumber,
+                                    onValueChange = { iucNumber = it},
                                     keyboardOptions = KeyboardOptions(
                                         keyboardType = KeyboardType.Phone,
                                         imeAction = ImeAction.Done
                                     ),
-                                    readOnly = true,
+                                    label = { Text("IUC Number") },
                                     modifier = modifier.fillMaxWidth()
                                 )
                                 Spacer(modifier.height(10.dp))
@@ -359,7 +367,7 @@ fun CableTV(
                                     modifier = modifier.fillMaxWidth().height(50.dp)
                                 ) {
                                     Text(
-                                        "Verify Meter",
+                                        "Verify IUC",
                                         color = MaterialTheme.colorScheme.onPrimary,
                                         fontSize = 18.sp
                                     )

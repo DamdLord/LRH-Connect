@@ -80,19 +80,49 @@ fun Home(
                 Text("Menu", modifier = modifier.padding(16.dp))
                 HorizontalDivider()
                 NavigationDrawerItem(
-                    label = { Text("Home") },
+                    label = {
+                        Text(
+                            text = "Home",
+                            color = MaterialTheme.colorScheme.onPrimary
+                        )
+                    },
                     selected = false,
-                    onClick = { }
+                    onClick = { navController.navigate(Screens.Home.name)}
                 )
                 NavigationDrawerItem(
-                    label = { Text("Profile") },
+                    label = {
+                        Text(
+                            "Notification",
+                            color = MaterialTheme.colorScheme.onPrimary
+                        )
+                    },
                     selected = false,
-                    onClick = { }
+                    onClick = { navController.navigate(Screens.Notification.name) }
+                )
+                NavigationDrawerItem(
+                    label = {
+                        Text(
+                            "Support",
+                            color = MaterialTheme.colorScheme.onPrimary
+                        )
+                    },
+                    selected = false,
+                    onClick = { navController.navigate(Screens.Support.name) }
+                )
+                NavigationDrawerItem(
+                    label = {
+                        Text(
+                            "Referral",
+                            color = MaterialTheme.colorScheme.onPrimary
+                        )
+                    },
+                    selected = false,
+                    onClick = { navController.navigate(Screens.Referral.name)}
                 )
             }
         }
     ) {
-        Scaffold() {innerPadding ->
+        Scaffold() { innerPadding ->
             Column(
                 modifier
                     .fillMaxSize()
@@ -151,7 +181,7 @@ fun Home(
 
                                 )
                                 Card(
-                                    onClick = {},
+                                    onClick = { navController.navigate(Screens.WalletFunding.name) },
                                     elevation = CardDefaults.elevatedCardElevation(10.dp),
                                     shape = RoundedCornerShape(10.dp),
                                     colors = CardDefaults.cardColors(MaterialTheme.colorScheme.onPrimary),
@@ -282,12 +312,12 @@ fun Home(
                             ServiceOptionCard(
                                 image = painterResource(R.drawable.bill_payment),
                                 text = "Bill Payment",
-                                onClick = { navController.navigate(Screens.Bill.name)}
+                                onClick = { navController.navigate(Screens.Bill.name) }
                             )
                             ServiceOptionCard(
                                 image = painterResource(R.drawable.bulk_sms),
                                 text = "Bulk SMS",
-                                onClick = { navController.navigate(Screens.BulkSMS.name)}
+                                onClick = { navController.navigate(Screens.BulkSMS.name) }
                             )
                         }
                         Spacer(modifier.height(10.dp))
@@ -298,7 +328,7 @@ fun Home(
                             ServiceOptionCard(
                                 image = painterResource(R.drawable.cable),
                                 text = "Cable Subscription",
-                                onClick = { navController.navigate(Screens.CableTV.name)}
+                                onClick = { navController.navigate(Screens.CableTV.name) }
                             )
                             ServiceOptionCard(
                                 image = painterResource(R.drawable.result),
@@ -354,10 +384,10 @@ fun ScrollingText(text: String) {
 @Composable
 fun ServiceOptionCard(
     modifier: Modifier = Modifier,
-    onClick: () -> Unit ,
+    onClick: () -> Unit,
     image: Painter,
     text: String
-){
+) {
     OutlinedCard(
         onClick = onClick,
         elevation = CardDefaults.elevatedCardElevation(5.dp),
@@ -392,10 +422,9 @@ fun ServiceOptionCard(
 }
 
 
-
 @Preview(showBackground = true)
 @Composable
-fun ShowHome(){
+fun ShowHome() {
     MaterialTheme {
         val navController = rememberNavController()
         Home(
@@ -406,7 +435,7 @@ fun ShowHome(){
 
 @Preview(showBackground = true)
 @Composable
-fun ShowServiceOptionCard(){
+fun ShowServiceOptionCard() {
     MaterialTheme {
         ServiceOptionCard(
             image = painterResource(R.drawable.cable),

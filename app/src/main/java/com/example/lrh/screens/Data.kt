@@ -69,14 +69,14 @@ fun Data(
     var selectedDataPlan by rememberSaveable { mutableStateOf("") }
     var selectedDataType by rememberSaveable { mutableStateOf("") }
     var numberInput by rememberSaveable { mutableStateOf("") }
-    val dataTypeList = when(selectedOption){
+    var dataTypeList = when(selectedOption){
         NetworkList.networkList[1] -> DataType.MTNDataTypeList
         NetworkList.networkList[2] -> DataType.AirtelDataType
         NetworkList.networkList[3] -> DataType.NineMobileDtaType
         NetworkList.networkList[4] -> DataType.GLODtaType
         else -> listOf()
     }
-    val dataPlanList = when(selectedOption to selectedDataType){
+    var dataPlanList = when(selectedOption to selectedDataType){
         NetworkList.networkList[1] to DataType.MTNDataTypeList[1] -> DataPlanList.mtnSME
         NetworkList.networkList[1] to DataType.MTNDataTypeList[2] -> DataPlanList.mtnGifting
         NetworkList.networkList[1] to DataType.MTNDataTypeList[3] -> DataPlanList.ntnCorporate
@@ -298,6 +298,8 @@ fun Data(
                                             onClick = {
                                                 selectedOption = "MTN"
                                                 isSelectNetworkDropdownExpanded = false
+                                                selectedDataType = ""
+                                                selectedDataPlan = ""
                                             }
                                         )
                                         Spacer(modifier.height(5.dp))
@@ -319,6 +321,8 @@ fun Data(
                                             onClick = {
                                                 selectedOption = "GLO"
                                                 isSelectNetworkDropdownExpanded = false
+                                                selectedDataType = ""
+                                                selectedDataPlan = ""
                                             }
                                         )
                                         Spacer(modifier.height(5.dp))
@@ -340,6 +344,8 @@ fun Data(
                                             onClick = {
                                                 selectedOption = "AIRTEL"
                                                 isSelectNetworkDropdownExpanded = false
+                                                selectedDataType = ""
+                                                selectedDataPlan = ""
                                             }
                                         )
                                         Spacer(modifier.height(5.dp))
@@ -361,6 +367,8 @@ fun Data(
                                             onClick = {
                                                 selectedOption = "9MOBILE"
                                                 isSelectNetworkDropdownExpanded = false
+                                                selectedDataType = ""
+                                                selectedDataPlan = ""
                                             }
                                         )
 

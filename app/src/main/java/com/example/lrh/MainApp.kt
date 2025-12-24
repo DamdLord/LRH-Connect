@@ -20,11 +20,15 @@ import com.example.lrh.screens.Bill
 import com.example.lrh.screens.BulkSMS
 import com.example.lrh.screens.CableTV
 import com.example.lrh.screens.Data
+import com.example.lrh.screens.FundWallet
 import com.example.lrh.screens.Home
 import com.example.lrh.screens.Login
+import com.example.lrh.screens.Notification
 import com.example.lrh.screens.Onboarding
+import com.example.lrh.screens.Referral
 import com.example.lrh.screens.Register
 import com.example.lrh.screens.RetrieveAccount
+import com.example.lrh.screens.Support
 
 @Composable
 fun MainApp(
@@ -128,7 +132,26 @@ fun MainApp(
                     onBackClick = { navController.navigate(Screens.Home.name)}
                 )
             }
-
+            composable(route= Screens.WalletFunding.name) {
+                FundWallet(
+                    onBackClick = { navController.navigate(Screens.Home.name)}
+                )
+            }
+            composable(route = Screens.Support.name) {
+                Support(
+                    onBackClick = { navController.navigate(Screens.Home.name)}
+                )
+            }
+            composable(route = Screens.Notification.name) {
+                Notification(
+                     onBackClick = { navController.navigate(Screens.Home.name)}
+                 )
+            }
+            composable(route = Screens.Referral.name) {
+                Referral(
+                    onBackClick = { navController.navigate(Screens.Home.name)}
+                )
+            }
 
         }
     }

@@ -146,7 +146,7 @@ object DataPlanList{
 object CableTvProviderServiceList{
     val GOTVServiceList = listOf(
         "GOTV SMALLIE/₦1900/MONTH",
-        "GOTV JOLLI/₦45800/MONTH",
+        "GOTV JOLLI/₦5800/MONTH",
         "GOTV JINJA/₦3900/MONTH",
         "GOTV MAX/₦8500/MONTH",
         "GOTV SUPA/₦11400/MONTH",

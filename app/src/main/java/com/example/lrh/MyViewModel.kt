@@ -12,7 +12,11 @@ enum class Screens(title:String){
     Airtime("Airtime"),
     Bill("Bill"),
     BulkSMS("Bulk SMS"),
-    CableTV("CableTV")
+    CableTV("CableTV"),
+    WalletFunding("Wallet Funding"),
+    Support("Support"),
+    Notification("Notification"),
+    Referral("Referral"),
 
 }
 
