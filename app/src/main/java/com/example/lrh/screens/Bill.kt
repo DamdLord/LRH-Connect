@@ -57,6 +57,7 @@ fun Bill(
     onBackClick: () -> Unit
 ){
     var selectedOption by rememberSaveable { mutableStateOf("") }
+    var meterNumber by rememberSaveable { mutableStateOf("Meter no.") }
     var isDiscoDropdownExpanded by rememberSaveable { mutableStateOf(false) }
     var isSelectTypeDropdownExpanded by rememberSaveable { mutableStateOf(false) }
     var amount by rememberSaveable { mutableStateOf("")}
@@ -75,12 +76,12 @@ fun Bill(
                                 imageVector = Icons.AutoMirrored.Filled.ArrowBack,
                                 contentDescription = "Back",
                                 tint = MaterialTheme.colorScheme.primary,
-                                modifier = modifier.size(35.dp)
+                                modifier = modifier.size(30.dp)
                             )
                         }
                         Text(
                             text = "Electricity",
-                            fontSize = 27.sp,
+                            fontSize = 23.sp,
                             color = MaterialTheme.colorScheme.primary,
                             fontWeight = FontWeight.Bold
                         )
@@ -132,9 +133,8 @@ fun Bill(
                                     }
                                 ) {
                                     OutlinedTextField(
-                                        value = selectedOption,
-                                        onValueChange = { },
-                                        readOnly = true,
+                                        value = meterNumber,
+                                        onValueChange = { meterNumber = it },
                                         singleLine = true,
                                         keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Phone, imeAction = ImeAction.Done),
                                         maxLines = 1,

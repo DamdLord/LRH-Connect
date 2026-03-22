@@ -56,12 +56,12 @@ fun Support(
                                 imageVector = Icons.AutoMirrored.Filled.ArrowBack,
                                 contentDescription = "Back",
                                 tint = MaterialTheme.colorScheme.primary,
-                                modifier = modifier.size(35.dp)
+                                modifier = modifier.size(30.dp)
                             )
                         }
                         Text(
                             text = "Support",
-                            fontSize = 27.sp,
+                            fontSize = 23.sp,
                             color = MaterialTheme.colorScheme.primary,
                             fontWeight = FontWeight.Bold
                         )
@@ -159,12 +159,12 @@ fun Notification(
                                 imageVector = Icons.AutoMirrored.Filled.ArrowBack,
                                 contentDescription = "Back",
                                 tint = MaterialTheme.colorScheme.primary,
-                                modifier = modifier.size(35.dp)
+                                modifier = modifier.size(30.dp)
                             )
                         }
                         Text(
                             text = "Notification",
-                            fontSize = 27.sp,
+                            fontSize = 23.sp,
                             color = MaterialTheme.colorScheme.primary,
                             fontWeight = FontWeight.Bold
                         )
@@ -237,12 +237,12 @@ fun Referral(
                                 imageVector = Icons.AutoMirrored.Filled.ArrowBack,
                                 contentDescription = "Back",
                                 tint = MaterialTheme.colorScheme.primary,
-                                modifier = modifier.size(35.dp)
+                                modifier = modifier.size(30.dp)
                             )
                         }
                         Text(
                             text = "Referral",
-                            fontSize = 27.sp,
+                            fontSize = 23.sp,
                             color = MaterialTheme.colorScheme.primary,
                             fontWeight = FontWeight.Bold
                         )

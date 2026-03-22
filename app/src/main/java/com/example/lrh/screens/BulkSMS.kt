@@ -5,6 +5,7 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
@@ -42,12 +43,12 @@ fun BulkSMS(
                                 imageVector = Icons.AutoMirrored.Filled.ArrowBack,
                                 contentDescription = "Back",
                                 tint = MaterialTheme.colorScheme.primary,
-                                modifier = modifier.size(35.dp)
+                                modifier = modifier.size(30.dp)
                             )
                         }
                         Text(
                             text = "Bulk SMS",
-                            fontSize = 27.sp,
+                            fontSize = 23.sp,
                             color = MaterialTheme.colorScheme.primary,
                             fontWeight = FontWeight.Bold
                         )
@@ -57,9 +58,9 @@ fun BulkSMS(
                 expandedHeight = 40.dp
             )
         }
-    ) {
+    ) { innerPadding ->
         Column(
-            modifier.fillMaxSize(),
+            modifier.fillMaxSize().padding(innerPadding),
             verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {

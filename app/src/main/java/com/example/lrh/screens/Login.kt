@@ -191,7 +191,8 @@ fun LoginCard(
             ){
                 Text(
                     text = stringResource(R.string.forgotten_password),
-                    color = MaterialTheme.colorScheme.primary
+                    color = MaterialTheme.colorScheme.primary,
+                    fontSize = 15.sp
                 )
                 TextButton(
                     onClick = onRetrieveClick

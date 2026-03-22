@@ -30,7 +30,7 @@ fun AsyncImageI(
         placeholder = painterResource(R.drawable.plainblue),
         error = painterResource(R.drawable.ic_launcher_background),
         contentScale = ContentScale.Crop,
-        modifier = modifier.size(50.dp)
+        modifier = modifier.size(45.dp)
             .clip(CircleShape)
     )
 }

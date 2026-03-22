@@ -1,5 +1,4 @@
 package com.example.lrh.screens
-import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -11,7 +10,6 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.wrapContentSize
-import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
@@ -40,16 +38,13 @@ import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.RectangleShape
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.example.lrh.R
 import com.example.lrh.data.AsyncImageI
 import com.example.lrh.data.DataPlanList
 import com.example.lrh.data.DataType
@@ -158,12 +153,12 @@ fun Data(
                                 imageVector = Icons.AutoMirrored.Filled.ArrowBack,
                                 contentDescription = "Back",
                                 tint = MaterialTheme.colorScheme.primary,
-                                modifier = modifier.size(35.dp)
+                                modifier = modifier.size(30.dp)
                             )
                         }
                         Text(
                             text = "Data",
-                            fontSize = 27.sp,
+                            fontSize = 23.sp,
                             color = MaterialTheme.colorScheme.primary,
                             fontWeight = FontWeight.Bold
                         )
@@ -220,6 +215,7 @@ fun Data(
                                         value = numberInput,
                                         onValueChange = { numberInput = it },
                                         readOnly = false,
+                                        placeholder = { Text(text ="Phone Number")},
                                         singleLine = true,
                                         keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Phone, imeAction = ImeAction.Done),
                                         maxLines = 1,
@@ -291,8 +287,7 @@ fun Data(
                                             text = {
                                                 Text(
                                                     text = "MTN",
-                                                    color = MaterialTheme.colorScheme.onPrimary,
-                                                    fontSize = 18.sp
+                                                    color = MaterialTheme.colorScheme.onPrimary
                                                 )
                                             },
                                             onClick = {
@@ -314,8 +309,7 @@ fun Data(
                                             text = {
                                                 Text(
                                                     text = "GLO",
-                                                    color = MaterialTheme.colorScheme.onPrimary,
-                                                    fontSize = 18.sp
+                                                    color = MaterialTheme.colorScheme.onPrimary
                                                 )
                                             },
                                             onClick = {
@@ -337,8 +331,7 @@ fun Data(
                                             text = {
                                                 Text(
                                                     text = "AIRTEL",
-                                                    color = MaterialTheme.colorScheme.onPrimary,
-                                                    fontSize = 18.sp
+                                                    color = MaterialTheme.colorScheme.onPrimary
                                                 )
                                             },
                                             onClick = {
@@ -360,8 +353,7 @@ fun Data(
                                             text = {
                                                 Text(
                                                     text = "9MOBILE",
-                                                    color = MaterialTheme.colorScheme.onPrimary,
-                                                    fontSize = 20.sp
+                                                    color = MaterialTheme.colorScheme.onPrimary
                                                 )
                                             },
                                             onClick = {

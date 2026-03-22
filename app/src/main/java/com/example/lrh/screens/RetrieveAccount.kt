@@ -64,7 +64,7 @@ fun RetrieveAccount(
                             imageVector = Icons.AutoMirrored.Filled.ArrowBack,
                             contentDescription = "Back",
                             tint = MaterialTheme.colorScheme.primary,
-                            modifier = modifier.size(40.dp)
+                            modifier = modifier.size(30.dp)
                         )
                     }
                 },
